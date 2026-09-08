@@ -12,6 +12,7 @@ labels_dict={0:'Angry',1:'Disgust', 2:'Fear', 3:'Happy',4:'Neutral',5:'Sad',6:'S
 
 while True:
     ret,frame=video.read()
+    frame=cv2.flip(frame,1)
     gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces= faceDetect.detectMultiScale(gray, 1.3, 3)
     for x,y,w,h in faces:
